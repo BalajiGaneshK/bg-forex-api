@@ -22,7 +22,7 @@ app.get("/latest", async (req, res) => {
 
     let client = await mongoClient.connect(dbUrl);
     let db = client.db("bg-forex");
-        let data = await db.collection("latest").find().toArray();
+        let data = await db.collection("latest").find();
         
         res.status(200).json({ "forexData": data });
         
