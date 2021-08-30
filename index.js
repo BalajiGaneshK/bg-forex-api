@@ -24,7 +24,7 @@ app.get("/latest", async (req, res) => {
     let db = client.db("bg-forex");
         let data = await db.collection("latest").find().toArray();
         
-        res.status(200).json({ "allUsersData": data });
+        res.status(200).json({ "forexData": data });
         
 
         
